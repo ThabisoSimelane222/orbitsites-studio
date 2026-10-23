@@ -24,7 +24,7 @@ function Index() {
 
       <section className="border-y">
         <div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
-          {[["40+", "sites launched"], ["3 wks", "typical build"], ["98", "avg. speed score"], ["1", "point of contact"]].map(([n, l]) => (
+          {[["10+", "sites launched"], ["1–3 days", "typical build"], ["98", "avg. speed score"], ["1", "point of contact"]].map(([n, l]) => (
             <div key={l} className="border-r p-6 last:border-r-0 md:p-8">
               <div className="display text-4xl md:text-5xl">{n}</div>
               <div className="mt-1 text-sm text-muted-foreground">{l}</div>
