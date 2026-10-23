@@ -40,17 +40,22 @@ function Index() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {projects.slice(0, 2).map((p) => (
-            <Link to="/work" key={p.name} className="group block">
-              <div className={`${p.tone} aspect-[4/3] overflow-hidden rounded-md p-6`}>
-                <div className="h-full w-full rounded-sm bg-card shadow-sm transition-transform duration-500 group-hover:-translate-y-2">
-                  <div className="flex gap-1.5 border-b p-3">
-                    <span className="h-2 w-2 rounded-full bg-border" /><span className="h-2 w-2 rounded-full bg-border" /><span className="h-2 w-2 rounded-full bg-border" />
-                  </div>
-                  <div className="p-6"><div className="display text-3xl">{p.name}</div><div className="mt-3 h-2 w-2/3 rounded bg-muted" /><div className="mt-2 h-2 w-1/2 rounded bg-muted" /></div>
-                </div>
+            <a href={p.url} target="_blank" rel="noreferrer" key={p.name} className="group block">
+              <div className="overflow-hidden rounded-md border bg-card shadow-sm">
+                <img
+                  src={p.shot}
+                  alt={`${p.name} website`}
+                  width={1280}
+                  height={720}
+                  loading="lazy"
+                  className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                />
               </div>
-              <div className="mt-3 flex justify-between text-sm"><span>{p.name} — {p.type}</span><span className="text-muted-foreground">{p.year}</span></div>
-            </Link>
+              <div className="mt-3 flex justify-between gap-4 text-sm">
+                <span>{p.name} — {p.type}</span>
+                <span className="shrink-0 text-muted-foreground">{p.domain} ↗</span>
+              </div>
+            </a>
           ))}
         </div>
       </section>
