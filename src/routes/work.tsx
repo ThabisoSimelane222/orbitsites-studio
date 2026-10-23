@@ -25,13 +25,15 @@ function Work() {
         address. Every one is hand-coded for the business behind it.
       </PageHead>
       <section className="mx-auto grid max-w-6xl gap-x-8 gap-y-16 px-5 pb-24 md:grid-cols-2">
-        {projects.map((p, i) => (
+        {projects.map((p, i) => {
+          const last = i === projects.length - 1;
+          return (
           <a
             key={p.name}
             href={p.url}
             target="_blank"
             rel="noreferrer"
-            className={`group block ${i % 2 ? "md:mt-24" : ""}`}
+            className={`group block ${i % 2 ? "md:mt-24" : ""} ${last ? "md:col-span-2" : ""}`}
           >
             <div className="overflow-hidden rounded-md border bg-card shadow-sm">
               <img
@@ -40,7 +42,7 @@ function Work() {
                 width={1280}
                 height={720}
                 loading="lazy"
-                className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                className={`aspect-[16/10] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] ${last ? "md:aspect-[21/9]" : ""}`}
               />
             </div>
             <div className="mt-4 flex items-start justify-between gap-4 border-b pb-4">
