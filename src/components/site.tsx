@@ -1,12 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import hotboxxShot from "@/assets/hotboxx.jpg.asset.json";
-import flipaholicsShot from "@/assets/flipaholics.jpg.asset.json";
-import urbanfieldShot from "@/assets/urbanfield.jpg.asset.json";
-import mahambaShot from "@/assets/mahamba.jpg.asset.json";
-import floor2framesShot from "@/assets/floor2frames.jpg.asset.json";
-import antiqueShot from "@/assets/antique.jpg.asset.json";
-import mastercraftShot from "@/assets/mastercraft.jpg.asset.json";
+
+const MEDIA_BASE = "https://ddznxggsxxwzgcpdqxxf.supabase.co/storage/v1/object/public/media";
+const media = (path: string) => `${MEDIA_BASE}/${path}`;
 
 const nav = [
   { to: "/services", label: "Services" },
@@ -124,7 +120,7 @@ export const projects: Project[] = [
     blurb:
       "The full menu online with order numbers, WhatsApp payment and tap-to-navigate directions to all three Matsulu stores.",
     stage: "Live on own domain",
-    shot: hotboxxShot.url,
+    shot: media("projects/hotboxx.jpg"),
   },
   {
     name: "Flipaholics SA",
@@ -136,7 +132,7 @@ export const projects: Project[] = [
     blurb:
       "Renovations sold through a filterable gallery — kitchens, bathrooms, closets, cabinetry — with a proper consultation booking page.",
     stage: "Live on own domain",
-    shot: flipaholicsShot.url,
+    shot: media("projects/flipaholics.jpg"),
   },
   {
     name: "Urban Field Guest House",
@@ -148,7 +144,7 @@ export const projects: Project[] = [
     blurb:
       "Hourly, half-day and overnight rates with one-tap WhatsApp booking, a room-by-room gallery and coordinates for the gate.",
     stage: "Preview build",
-    shot: urbanfieldShot.url,
+    shot: media("projects/urbanfield.jpg"),
   },
   {
     name: "Mahamba Kitchen Projects",
@@ -160,7 +156,7 @@ export const projects: Project[] = [
     blurb:
       "A numbered portfolio of kitchens, wardrobes and entertainment units, a process page, and a phone-first enquiry at the foot.",
     stage: "Preview build",
-    shot: mahambaShot.url,
+    shot: media("projects/mahamba.jpg"),
   },
   {
     name: "Floor2Frames Solutions",
@@ -172,7 +168,7 @@ export const projects: Project[] = [
     blurb:
       "Epoxy, cementitious, wooden flooring and aluminium work explained, shown through real installs, and quoted from one form.",
     stage: "Preview build",
-    shot: floor2framesShot.url,
+    shot: media("projects/floor2frames.jpg"),
   },
   {
     name: "Antique Built-In Solutions",
@@ -184,7 +180,7 @@ export const projects: Project[] = [
     blurb:
       "A joinery workshop with a gallery of live installations, made-to-measure promises and a WhatsApp quote request that stays open all week.",
     stage: "Preview build",
-    shot: antiqueShot.url,
+    shot: media("projects/antique.jpg"),
   },
   {
     name: "MasterCraft Projects",
@@ -196,6 +192,6 @@ export const projects: Project[] = [
     blurb:
       "A quiet, editorial studio site — renovations, interiors and furniture, led by two featured projects and a single line of intent.",
     stage: "Preview build",
-    shot: mastercraftShot.url,
+    shot: media("projects/mastercraft.jpg"),
   },
 ];
