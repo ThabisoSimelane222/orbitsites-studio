@@ -62,7 +62,8 @@ function Work() {
               <span className="shrink-0 text-xs text-muted-foreground">{p.stage}</span>
             </div>
           </a>
-        ))}
+          );
+        })}
       </section>
     </>
   );
